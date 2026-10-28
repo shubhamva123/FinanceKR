@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-ink-200;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-ink-50 text-ink-900;
+  }
+
+  /* Tabular numbers for financial figures */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  /* Card — the workhorse of this app */
+  .card {
+    @apply rounded-lg border border-ink-200 bg-white shadow-sm;
+  }
+
+  .card-padded {
+    @apply card p-4 sm:p-5;
+  }
+
+  /* Status badges */
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium;
+  }
+
+  .badge-paid {
+    @apply badge bg-success-100 text-success-700;
+  }
+
+  .badge-partial {
+    @apply badge bg-warning-100 text-warning-700;
+  }
+
+  .badge-pending {
+    @apply badge bg-ink-100 text-ink-600;
+  }
+
+  .badge-overdue {
+    @apply badge bg-error-100 text-error-700;
+  }
+
+  .badge-active {
+    @apply badge bg-primary-100 text-primary-700;
+  }
+
+  .badge-closed {
+    @apply badge bg-ink-100 text-ink-500;
+  }
+
+  /* Form inputs */
+  .input {
+    @apply w-full rounded-md border border-ink-300 bg-white px-3 py-2 text-sm text-ink-900 placeholder-ink-400 transition-colors focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-100;
+  }
+
+  .input-error {
+    @apply border-error-400 focus:border-error-500 focus:ring-error-100;
+  }
+
+  .label {
+    @apply mb-1 block text-sm font-medium text-ink-700;
+  }
+
+  .label-tag {
+    @apply inline-flex items-center gap-1 rounded text-2xs font-semibold uppercase tracking-wide;
+  }
+
+  .label-input {
+    @apply label-tag bg-primary-100 text-primary-700 px-1.5 py-0.5;
+  }
+
+  .label-calculated {
+    @apply label-tag bg-accent-100 text-accent-700 px-1.5 py-0.5;
+  }
+
+  .label-auto {
+    @apply label-tag bg-ink-100 text-ink-500 px-1.5 py-0.5;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800;
+  }
+
+  .btn-secondary {
+    @apply btn border border-ink-300 bg-white text-ink-700 hover:bg-ink-50 active:bg-ink-100;
+  }
+
+  .btn-ghost {
+    @apply btn text-ink-600 hover:bg-ink-100 hover:text-ink-900;
+  }
+
+  .btn-danger {
+    @apply btn bg-error-600 text-white hover:bg-error-700 active:bg-error-800;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs;
+  }
+
+  .btn-icon {
+    @apply inline-flex items-center justify-center rounded-md p-2 text-ink-500 transition-colors hover:bg-ink-100 hover:text-ink-900;
+  }
+
+  /* Tables */
+  .table-row-clickable {
+    @apply cursor-pointer transition-colors hover:bg-ink-50;
+  }
+}
+
+@layer utilities {
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-ink-300;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-ink-400;
+  }
+}
